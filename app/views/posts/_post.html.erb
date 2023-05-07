@@ -1,7 +1,9 @@
 <div class="container gl-1 mt-1">
   <div class="card border-0 shadow">
     <div class="card-body bg-dark text-white rounded-top rounded-bottom">
-      <%= image_tag post.image, class: "card-img-top rounded-top rounded-bottom mx-auto d-block ml-2 mr-2 mt-3", alt: "image description" %>
+      <%= link_to post_path(post) do %>
+        <%= image_tag post.image, class: "card-img-top rounded-top rounded-bottom mx-auto d-block ml-2 mr-2 mt-3", alt: "image description" %>
+      <% end %>
       <h5 class="card-title mt-2 mb-0"><%= post.title %></h5>
       <h6 class="card-title mt-1 mb-0"><%= post.artist %></h6>
       <p class="card-text font-weight-bold mb-0"><%= post.date%> | <%= post.time.strftime("%I:%M %p") %></p>
