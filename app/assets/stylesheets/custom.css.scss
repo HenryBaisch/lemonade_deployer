@@ -50,6 +50,48 @@ body {
 
 .post-card {
   display: inline-block;
-  margin-right: 1rem; /* Or whatever spacing you want between cards */
+  margin-right: 8px; /* Or whatever spacing you want between cards */
   vertical-align: top; /* To ensure cards align to the top of the container */
 }
+
+#date {
+  color: red;
+}
+
+.card-title {
+  font-size: 14px; /* adjust as needed */
+  line-height: 1.2; /* adjust as needed */
+}
+
+.post-card {
+  display: inline-block;
+  margin-right: 1rem;
+  vertical-align: top;
+  width: 200px;
+}
+
+
+.spotify-label {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #1DB954;
+  padding: 5px 10px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.neon {
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de;
+}
+.logo-img {
+  max-width: 40px; /* Change the value as per your requirement */
+}
+
