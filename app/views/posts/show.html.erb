@@ -1,13 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
-<div class="card-body bg-dark text-white rounded-top rounded-bottom mt-1 mx-2">
-  <p class="card-text mb-0"><%= @post.description %></p>
+<div class="card border-0 mx-1">
+  <div class="card-body bg-dark text-white rounded-top rounded-bottom">
+    
+    <div class="container">
+      <%= image_tag @post.image, class: "card-img-top rounded-top rounded-bottom d-block", alt: "image description" %>
 
-  <div>
-    <%= link_to "Edit this post", edit_post_path(@post) %> |
-    <%= link_to "Back to posts", posts_path %>
+    </div>
+    <p class="card-text mb-0"><%= @post.description %></p>
+    <div>
+      <%= link_to "Back to posts", posts_path %>
 
-    <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-sm btn-primary mb-2 mx-2" %>
+      <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-sm btn-primary mb-2 mx-2" %>
+    </div>
   </div>
 </div>
