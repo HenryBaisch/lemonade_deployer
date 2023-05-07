@@ -1,11 +1,39 @@
 
 
-<div id="posts">
+<div id="posts-carousel" class="carousel slide" data-bs-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @posts.each_with_index do |post, index| %>
+      <li data-bs-target="#posts-carousel" data-bs-slide-to="<%= index %>" <% if index == 0 %>class="active"<% end %>></li>
+    <% end %>
+  </ol>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <% @posts.each_with_index do |post, index| %>
+      <div class="carousel-item <% if index == 0 %>active<% end %>">
+        <div class="container mt-2">
+          <%= render post %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Controls -->
+  <a class="carousel-control-prev" href="#posts-carousel" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#posts-carousel" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+<div id="posts" class="horizontal-scroll-container">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+    <div class="container mt-2 post-card">
+      <%= render post %>
+    </div>
   <% end %>
 </div>
-<%= link_to "New post", new_post_path %>

@@ -36,3 +36,20 @@ body {
 .navbar-toggler-icon {
   color: white !important;
 }
+.card-text{
+  color: #A7A7A7;
+}
+
+#posts.horizontal-scroll-container {
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.post-card {
+  display: inline-block;
+  margin-right: 1rem; /* Or whatever spacing you want between cards */
+  vertical-align: top; /* To ensure cards align to the top of the container */
+}
