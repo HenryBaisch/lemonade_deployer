@@ -227,6 +227,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
+  activestorage
   bootsnap
   bootstrap (~> 5.2.0)
   capybara
