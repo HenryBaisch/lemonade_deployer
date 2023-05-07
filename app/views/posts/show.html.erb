@@ -1,16 +1,19 @@
 <p style="color: green"><%= notice %></p>
-
+<div class="mx-2 mb-2">
+  <%= link_to posts_path do %>
+    <i class="fas fa-chevron-circle-left fa-xl" style="opacity: 0.75;"></i>
+  <% end %>
+</div>
 <div class="card border-0 mx-1">
   <div class="card-body bg-dark text-white rounded-top rounded-bottom">
-    
+
+
     <div class="container">
       <%= image_tag @post.image, class: "card-img-top rounded-top rounded-bottom d-block", alt: "image description" %>
 
     </div>
     <p class="card-text mb-0"><%= @post.description %></p>
     <div>
-      <%= link_to "Back to posts", posts_path %>
-
       <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-sm btn-primary mb-2 mx-2" %>
     </div>
   </div>
