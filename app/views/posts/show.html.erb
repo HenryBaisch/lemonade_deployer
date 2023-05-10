@@ -1,9 +1,14 @@
 <p style="color: green"><%= notice %></p>
-<div class="mx-2 mb-2">
-  <%= link_to posts_path do %>
-    <i class="fas fa-chevron-circle-left fa-xl" style="opacity: 0.75;"></i>
-  <% end %>
+
+<div class="d-flex align-items-center mx-1">
+  <h2 class="spotify-label">Event Details</h2>
+  <div class="mx-2 mb-2">
+    <%= link_to posts_path do %>
+      <i class="fas fa-chevron-circle-left fa-xl" style="opacity: 0.75;"></i>
+    <% end %>
+  </div>
 </div>
+
 <div class="card border-0 mx-1">
   <div class="card-body bg-dark text-white rounded-top rounded-bottom">
 
@@ -12,9 +17,25 @@
       <%= image_tag @post.image, class: "card-img-top rounded-top rounded-bottom d-block", alt: "image description" %>
 
     </div>
+    
+
     <p class="card-text mb-0"><%= @post.description %></p>
+
+
     <div>
       <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-sm btn-primary mb-2 mx-2" %>
     </div>
+
+    <div class="card rounded-top rounded-bottom mt-4" id="map" style="height: 500px">
+      <script>
+        function initMap() {
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 37.7749, lng: -122.4194},
+            zoom: 10
+          });
+        }
+      </script> 
+    </div>
   </div>
+
 </div>

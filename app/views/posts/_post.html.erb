@@ -2,7 +2,7 @@
 <div class="card post-card border-0 shadow">
   <div class="card-body bg-dark text-white rounded-top rounded-bottom" style="font-size: 14px;">
     <%= link_to post_path(post) do %>
-      <%= image_tag post.image, class: "card-img-top rounded-top rounded-bottom mx-auto d-block ml-2 mr-2 mt-1", alt: "image description" %>
+      <%= image_tag post.image, class: "card-img-top rounded-top rounded-bottom mx-auto d-block ml-1 mr-1 mt-1", alt: "image description" %>
     <% end %>
     <p class="card-text font-weight-bold mt-1 mb-0" id="date"><%= post.date%> | <%= post.time.strftime("%I:%M %p") %></p>
     <h5 class="card-title mt-2 mb-0"><%= post.title %></h5>
