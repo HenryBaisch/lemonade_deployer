@@ -1,67 +1,3 @@
-<%= form_with(model: post) do |f| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  
-  
-  
-
-
-  <div class="form-group">
-    <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :artist %>
-    <%= f.text_field :artist, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :genre %>
-    <%= f.text_field :genre, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :date %>
-    <%= f.date_field :date, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :time %>
-    <%= f.time_field :time, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :location %>
-    <%= f.text_field :location, class: "form-control" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: "form-control" %>
-  </div>
-  <div >
-    <%= f.submit class: "spotify-label mt-1 mx-2"%>
-  </div>
-<% end %>
 
 
 
@@ -70,7 +6,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel"> Show</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">New Show</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
