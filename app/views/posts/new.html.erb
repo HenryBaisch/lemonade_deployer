@@ -1,9 +1,11 @@
-<h1>New post</h1>
+<div class="container-fluid full-height dark-page">
+  <h1 class="spotify-label mx-2 mb-0 mt-2">New post</h1>
+  <%= link_to posts_path do %>
+    <i class="fas fa-chevron-circle-left fa-xl" style="opacity: 0.75;"></i>
+  <% end %>
 
-<%= render "form", post: @post %>
+  <%= render "form", post: @post %>
 
-<br>
 
-<div>
-  <%= link_to "Back to posts", posts_path %>
 </div>
+
