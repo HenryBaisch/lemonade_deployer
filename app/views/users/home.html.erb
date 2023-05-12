@@ -1,11 +1,10 @@
 <div class="container-fluid full-height gradient-background">
   <nav class="navbar navbar-expand-lg bg-dark rounded-bottom mx-1">
     <div class="container-fluid mt-2">
-      <a class="navbar-brand d-flex align-items-center" href="#">
+      <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         <i class="fa-regular fa-plus fa-xl icon-light mx-2"></i>
         <span class="text-light" style="font-size: small;">post a show</span>
       </a>
-
       <div class="ml-auto d-flex align-items-center">
         <div class="dropdown mr-3">
           <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -79,3 +78,5 @@
   </div>
 
 </div>
+
+<%= render 'posts/form', post: Post.new %>
