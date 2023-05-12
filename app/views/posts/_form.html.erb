@@ -70,7 +70,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"> Show</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -92,10 +92,16 @@
           
 
 
+        
           <div class="form-group">
             <%= f.label :image %>
-            <%= f.file_field :image, class: "form-control" %>
+            <%= f.file_field :image, class: "form-control", id: "image-input" %>
+            <div class="card rounded-top mt-2 rounded-bottom">
+              <img id="image-preview" src="#" alt="Image Preview" style="display: none;">
+            </div>
           </div>
+
+          
           <div class="form-group">
             <%= f.label :title %>
             <%= f.text_field :title, class: "form-control" %>
@@ -135,7 +141,7 @@
             <%= f.text_field :address, class: "form-control" %>
           </div>
           <div >
-            <%= f.submit class: "spotify-label mt-1 mx-2"%>
+            <%= f.submit class: "spotify-label border-0 mt-1 mx-2"%>
           </div>
         <% end %>
 
