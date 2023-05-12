@@ -15,3 +15,20 @@
  */
 @import 'bootstrap';
 
+.artist-card {
+  background: #594654;
+  border: 0;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.dark-page {
+  background-color: black;
+  padding: 0%;
+}
+
+.gradient-background {
+  background: linear-gradient(to bottom, #233347, black);
+}
