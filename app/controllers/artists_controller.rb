@@ -1,9 +1,13 @@
 class ArtistsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
+    current_user.artist.destroy if current_user.artist
     @artist = current_user.build_artist
   end
   
   def create
+    current_user.artist.destroy if current_user.artist
     @artist = current_user.build_artist(artist_params)
 
     if @artist.save

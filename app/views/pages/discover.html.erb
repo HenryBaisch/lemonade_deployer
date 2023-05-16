@@ -10,3 +10,9 @@
   </div>
 
 </div>
+
+<% @artists.each do |artist| %>
+  <div class="container artist-card" style="max-width: 200px;">
+    <%= render artist %>
+  </div>
+<% end %>
