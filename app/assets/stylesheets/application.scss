@@ -21,6 +21,14 @@ color: #121212	;
 color: #535353	;
 color: #b3b3b3	;
 }
+.artist-card {
+  background-color: #808080; /* Mid-gray background color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.artist-card .card-title {
+  text-align: right; /* Align artist name to the right */
+}
 
 .dark {
   color: #121212;
@@ -57,11 +65,15 @@ color: #b3b3b3	;
   padding: 0%;
 }
 
-.gradient-background {
+.gradient-background-1 {
   background: linear-gradient(to bottom, #233347, black);
   padding: 0%;
 }
-
+.gradient-background-2 {
+  background: linear-gradient(to bottom, #234736, black);
+  padding: 0%;
+  min-height: 200px;
+}
 
 
 .btn-gray {
@@ -73,4 +85,8 @@ color: #b3b3b3	;
 .custom-modal-content {
   background-color: #594654 !important; /* Change the background color */
   color: white !important; /* Change the text color */
+}
+
+#discover-page-content {
+  background: linear-gradient(to bottom, #264e3b, black);
 }
