@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'user_home', to: 'users#home'
   get 'discover', to: 'pages#discover'
   resources :posts
+  resources :artists
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'posts#index'
   # Defines the root path route ("/")
