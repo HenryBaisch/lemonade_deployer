@@ -16,7 +16,7 @@
 
   <!-- artists -->
 
-  <div id="posts" class="horizontal-scroll-container mt-2" >
+  <div class="horizontal-scroll-container d-flex flex-nowrap overflow-auto mt-2">
     <% @artists.each do |artist| %>
       <%= render artist %>
     <% end %>

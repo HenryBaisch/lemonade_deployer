@@ -50,10 +50,18 @@ color: #b3b3b3	;
   background-color: #b3b3b3; 
 }
 .artist-card {
-  background: #594654;
   border: 0;
+  background-color: #808080; /* Mid-gray background color */
+  border-radius: 10px; /* Rounded corners */
+  display: inline-block;
+  width: 300px;
+  color: #fff; /* White text */
 }
 
+
+.artist-card .card-title {
+  text-align: right; /* Align artist name to the right */
+}
 .full-height {
   height: 100vh;
 }

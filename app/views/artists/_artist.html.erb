@@ -2,15 +2,18 @@
 
 
 
-<div class="card artist-card">
-    <div class="row no-gutters">
-        <div class="col-auto">
-            <img src="profile.jpg" class="img-fluid" alt="">
+<div class="container">
+  <div class="card mb-3 artist-card">
+    <div class="row g-0">
+      <div class="col-4">
+        <%= image_tag("image.jpeg", class: "card-img", alt: "Artist Image") %>
+      </div>
+      <div class="col-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= artist.name %></h5>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
-        <div class="col">
-            <div class="card-block px-2">
-                <h4 class="card-title"><%= artist.name %><br/></h4>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </div>
