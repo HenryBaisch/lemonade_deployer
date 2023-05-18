@@ -22,5 +22,7 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1">Discover Local</span>
+    <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+
   </div>
 </nav>

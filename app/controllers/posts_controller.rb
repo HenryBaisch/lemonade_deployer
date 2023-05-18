@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
+  before_action :check_author, only: [:edit, :update, :destroy]
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
     @post.image.attach(params[:post][:image]) # attach the uploaded image to the post
     respond_to do |format|
       if @post.save
@@ -68,4 +68,9 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :description, :artist, :genre, :date, :time, :location, :address)
     end
     
+    def check_author
+      if @post.user != current_user
+        redirect_to posts_url, notice: 'You are not authorized to modify this post.'
+      end
+    end
 end

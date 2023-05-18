@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'discover', to: 'pages#discover'
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root 'posts#index'
+  root 'pages#discover'
   # Defines the root path route ("/")
   # root "articles#index"
 end
