@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-
+  before_action :check_author, only: [:edit, :update, :destroy]
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -68,4 +68,9 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :description, :artist, :genre, :date, :time, :location, :address)
     end
     
+    def check_author
+      if @post.user != current_user
+        redirect_to posts_url, notice: 'You are not authorized to modify this post.'
+      end
+    end
 end
