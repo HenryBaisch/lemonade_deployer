@@ -5,7 +5,7 @@
 
     <div id="posts" class="horizontal-scroll-container mt-2" >
       <% @posts.each do |post| %>
-        <div class="container post-card" style="max-width: 200px;">
+        <div class="container-fluid">
           <%= render post %>
         </div>
       <% end %>
