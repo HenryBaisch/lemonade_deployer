@@ -1,4 +1,4 @@
-<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
+<!-- <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,11 +18,32 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <span class="navbar-brand mb-0 h1">Discover Local</span>
-    <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-house icon-light"></i>
+    <% end %>
+
+    <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <i class="fa-regular fa-plus fa-xl icon-light mx-2"></i>
+    </a>
+
+     <div class="dropdown mr-3">
+        <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fas fa-caret-down fa-xl icon-light"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#"><%= button_to 'Sign out', destroy_user_session_path, method: :delete %></a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
+    <%= link_to profile_path(current_user) do %>
+      <i class="fa-solid fa-user-astronaut fa-xl icon-light mx-3"></i>
+    <% end %>
 
   </div>
+  
 </nav>
