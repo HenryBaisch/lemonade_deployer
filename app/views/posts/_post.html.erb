@@ -4,7 +4,9 @@
       <%= image_tag post.image, class: "card-img-top rounded-top rounded-bottom mx-auto d-block ml-1 mr-1 mt-1", alt: "image description" %>
     <% end %>
     <p class="card-text font-weight-bold mt-1 mb-0" id="date"><%= post.date%> | <%= post.time.strftime("%I:%M %p") %></p>
-    <h5 class="post-title mt-2 mb-0"><%= post.title %></h5>
+
+    <h5 class="post-title text-wrap mt-2 mb-0"><%= post.title %></h5>
+
     <p class="card-text mt-0 mb-0"><em><%= post.artist %></em></p>
     
     <p class="card-text font-weight-bold mb-0"><%= post.location%><i class="fa fa-location-dot"></i></i></p>
