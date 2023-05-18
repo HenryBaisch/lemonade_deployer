@@ -74,15 +74,15 @@ color: #b3b3b3	;
 
 .artist-card {
   border: 0;
-  background-color: #808080; /* Mid-gray background color */
+  background-color: #212121;
   border-radius: 10px; /* Rounded corners */
   display: inline-block;
   width: 300px;
   color: #fff; /* White text */
 }
 
-.artist-card .card-title {
-  text-align: right; /* Align artist name to the right */
+.artist-card-title {
+  text-align: left; /* Align artist name to the right */
 }
 /* ----------------------------- */
 
@@ -128,6 +128,7 @@ color: #b3b3b3	;
 .post-card {
   padding-right: 5%;
   padding-left: 5%;
+  padding-top: 3%;
   display: inline-block;
   background-color: #212121;
   vertical-align: top;
@@ -184,4 +185,9 @@ color: #b3b3b3	;
 }
 .location-icon {
   margin-left: 7px;
+}
+
+.transparent {
+  color: #b3b3b3;
+  opacity: 75%;
 }

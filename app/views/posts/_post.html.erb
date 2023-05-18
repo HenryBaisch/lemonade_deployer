@@ -1,4 +1,4 @@
-<div class="d-flex justify-content-center horizontal-scroll-item">
+<div class="d-flex justify-content-center horizontal-scroll-item mb-2">
   <div class="post-card border-0 shadow position-relative">
     <%= link_to post_path(post) do %>
       <%= image_tag post.image, class: "card-img-top rounded-top rounded-bottom mx-auto d-block ml-1 mr-1 mt-1", alt: "image description" %>
@@ -6,6 +6,6 @@
     <h5 class="post-title text-wrap mt-1 mb-0"><%= post.title %></h5>
     <p class="card-text mt-0 mb-0"><em><%= post.artist %></em></p>
     <p class="card-text font-weight-bold mb-0"><%= post.location%><i class="fa fa-location-dot location-icon"></i></p>
-    <span class="badge bg-secondary position-absolute bottom-0 end-0 m-2"><%= post.date.strftime("%B %d") %></span>
+    <span class="badge transparent position-absolute bottom-0 end-0 m-2"><%= post.date.strftime("%B %d") %></span>
   </div>
 </div>
