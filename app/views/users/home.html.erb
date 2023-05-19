@@ -1,5 +1,26 @@
-<!-- dropdown -->
+
 <div class="container-fluid full-height gradient-background">
+  <!-- My posts -->
+  <% if current_user.posts.any?%>
+    <h3 class="spotify-label mx-2 mt-2">My Flyers</h3>
+    <div id="posts" class="horizontal-scroll-container mt-2" >
+      <% current_user.posts.each do |post| %>
+        <div id="discover-page-posts-carousel" class="container-fluid">
+          <%= render post %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <!-- saved flyers -->
+
+  <div class="container">
+  
+  </div>
+
+
+
+
+
   <!-- <nav class="navbar navbar-expand-lg bg-dark rounded-bottom mx-1">
     <div class="container-fluid mt-2">
       <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -22,7 +43,7 @@
   </nav> -->
 
 
-  
+
 
   <!-- following card -->
 

@@ -30,7 +30,7 @@
 
         
           <div class="form-group">
-            <%= f.label :image %>
+            <%= f.label :add_poster %>
             <%= f.file_field :image, class: "form-control", id: "image-input" %>
             <div class="card rounded-top mt-2 border-0 rounded-bottom">
               <img id="image-preview" src="#" alt="Image Preview" style="display: none;">
@@ -39,24 +39,38 @@
 
           
           <div class="form-group">
-            <%= f.label :title %>
-            <%= f.text_field :title, class: "form-control" %>
+            <%= f.label :Headline %>
+            <%= f.text_field :title, class: "form-control", placeholder: "Add a catchy headline for your show" %>
           </div>
 
           <div class="form-group">
             <%= f.label :description %>
-            <%= f.text_area :description, class: "form-control" %>
+            <%= f.text_area :description, class: "form-control", placeholder: "Add a show description" %>
           </div>
 
           <div class="form-group">
             <%= f.label :artist %>
-            <%= f.text_field :artist, class: "form-control" %>
+            <%= f.text_field :artist, class: "form-control", placeholder: "Who will be performing?" %>
           </div>
 
           <div class="form-group">
             <%= f.label :genre %>
-            <%= f.text_field :genre, class: "form-control" %>
+            <%= f.text_field :genre, class: "form-control", placeholder: "Add a genre" %>
           </div>
+          <!-- <%= f.label :genre %>
+          <%= f.select :genre, ["Option 1", "Option 2", "Option 3", "Other"], {}, class: "form-control", id: "genre-select" %>
+          <%= f.text_field :other_genre, class: "form-control", id: "other-genre-field", style: "display: none;", placeholder: "Enter your genre here" %>
+          <script>
+            document.getElementById('genre-select').addEventListener('change', function() {
+              var textField = document.getElementById('other-genre-field');
+              if (this.value === 'Other') {
+                textField.style.display = 'block';
+              } else {
+                textField.style.display = 'none';
+              }
+            });
+          </script> -->
+
 
           <div class="form-group">
             <%= f.label :date %>
@@ -69,12 +83,12 @@
           </div>
 
           <div class="form-group">
-            <%= f.label :location %>
-            <%= f.text_field :location, class: "form-control" %>
+            <%= f.label :Venue %>
+            <%= f.text_field :location, class: "form-control", placeholder: "venue name" %>
           </div>
           <div class="form-group">
             <%= f.label :address %>
-            <%= f.text_field :address, class: "form-control" %>
+            <%= f.text_field :address, class: "form-control", placeholder: "venue address" %>
           </div>
           <div >
             <%= f.submit class: "spotify-label border-0 mt-1 mx-2"%>
@@ -82,10 +96,7 @@
         <% end %>
 
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div>
+
     </div>
   </div>
 </div>

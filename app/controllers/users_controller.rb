@@ -5,6 +5,9 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-
+  def my_posts
+    @my_posts = current_user.posts
+  end
+  
 
 end
