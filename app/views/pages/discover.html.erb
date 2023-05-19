@@ -1,6 +1,6 @@
-<div class="container-fluid px-0" id="discover-page-content">
+<div class="container-fluid mt-0 px-0" id="discover-page-content">
   <!-- featured shows -->
-  <div class="container-fluid mt-1 pb-1 px-0">
+  <div class="container-fluid mt-0 pb-1 px-0">
     <h2 class="spotify-label mt-4 mb-0 mx-2 mt-2">Featured Shows</h2>
 
     <div id="posts" class="horizontal-scroll-container mt-2" >
@@ -23,12 +23,17 @@
   </div>
   <!-- all ahows -->
   <h2 class="spotify-label mt-4 mb-0 mx-2 mt-2">All Upcoming Shows</h2>
-  <div class="container pt-2 justify-content-center">
-    
-    <% @posts.each do |post| %>
-      
-      <%= render post %>
-
+  <div class="container pt-2">
+    <% @posts.each_slice(2) do |post_slice| %>
+      <div class="row">
+        <% post_slice.each do |post| %>
+          <div class="col-6">
+            <%= render post %>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
+
+
 </div>
