@@ -83,7 +83,9 @@ color: #b3b3b3	;
 }
 
 .artist-card-title {
-  text-align: left; /* Align artist name to the right */
+  
+  vertical-align: middle;
+  text-align: center;
 }
 /* ----------------------------- */
 
@@ -117,7 +119,7 @@ color: #b3b3b3	;
 /* ------------post styling -----------*/
 
 .post-title {
-  font-size: 20px;
+  font-size: 16px;
   color: white;
   font-family: 'FreeSansBold', sans-serif;
   word-wrap: break-word ;
@@ -191,7 +193,9 @@ color: #b3b3b3	;
 }
 
 
-
+#user-home-content {
+  height: 100%;
+}
 
 
 
@@ -214,4 +218,9 @@ color: #b3b3b3	;
   color: #fff;
   min-height: 100vh;
   padding: 10%;
+}
+.btn-icon {
+  background: none;
+  border: none;
+  color: white;
 }

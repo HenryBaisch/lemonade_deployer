@@ -19,33 +19,36 @@
     </div>
   </div>
 </nav> -->
+
 <nav class="navbar navbar-dark bg-dark sticky-top">
-  <div class="container-fluid">
+  <div class="container-fluid d-flex justify-content-between">
+    
     <%= link_to root_path do %>
       <i class="fa-solid fa-house icon-light"></i>
     <% end %>
 
-    <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-      <i class="fa-regular fa-plus fa-xl icon-light mx-2"></i>
-    </a>
+    <div>
+      <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <i class="fa-regular fa-square-plus fa-xl icon-light"></i>
+      </a>
 
-     <div class="dropdown mr-3">
+      <div class="dropdown d-inline mr-3">
         <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-caret-down fa-xl icon-light"></i>
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#"><%= link_to 'account', account_path %></a></li>
+          <li><%= link_to 'account', account_path, class: 'dropdown-item' %></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
           <li><a class="dropdown-item" href="#">Something else here</a></li>
         </ul>
       </div>
 
-    <%= link_to profile_path(current_user) do %>
-      <i class="fa-solid fa-user-astronaut fa-xl icon-light mx-3"></i>
-    <% end %>
+      <%= link_to profile_path(current_user) do %>
+        <i class="fa-solid fa-user-astronaut fa-xl icon-light mx-3"></i>
+      <% end %>
+    </div>
 
   </div>
-  
 </nav>
 
 <%= render 'posts/form', post: Post.new %>
