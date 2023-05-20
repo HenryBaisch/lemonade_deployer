@@ -1,9 +1,9 @@
 
-<div class="container-fluid px-0 full-height gradient-background">
+<div class="container bg-dark px-0" id="user-home-content">
   <!-- My posts -->
   <% if current_user.posts.any?%>
-    <div class="container-fluid" id="my-flyers-content">
-      <h3 class="spotify-label mx-2 mt-2">My Flyers</h3>
+    <div class="container-fluid">
+      <h1 class="spotify-label mx-2 mt-2">My Flyers</h1>
       <div id="posts" class="horizontal-scroll-container mt-2" >
         <% current_user.posts.each do |post| %>
           <div id="discover-page-posts-carousel" class="container-fluid">
@@ -15,93 +15,25 @@
   <% end %>
   <!-- saved flyers -->
 
-  <div class="container">
-  
+
+
+
+
+
+
+ 
+  <h1 class="spotify-label mx-2 mt-2">bookmarks</h1>
+  <div class="container pt-2">
+    <% @bookmarked_posts.each_slice(2) do |post_slice| %>
+      <div class="row">
+        <% post_slice.each do |post| %>
+          <div class="col-6">
+            <%= render post %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-
-
-
-
-
-  <!-- <nav class="navbar navbar-expand-lg bg-dark rounded-bottom mx-1">
-    <div class="container-fluid mt-2">
-      <a type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        <i class="fa-regular fa-plus fa-xl icon-light mx-2"></i>
-      </a>
-      <div class="ml-auto d-flex align-items-center">
-        <div class="dropdown mr-3">
-          <button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-caret-down fa-xl icon-light"></i>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </div>
-        <i class="fa-solid fa-user-astronaut fa-xl icon-light mx-3"></i>
-      </div>
-    </div>
-  </nav> -->
-
-
-
-
-  <!-- following card -->
-
-  <!-- <div class="card-body gradient-background text-white rounded-top rounded-bottom mt-1 mx-1 px-2">
-    <h3 class="spotify-label mx-2 mt-2">Following</h3>
-    <div class="row">
-      <div class="col-6">
-        <!== First Card ==>
-        <div class="card artist-card mb-4">
-          <div class="card-body">
-            
-          </div>
-        </div>
-        <!== Add more cards here as needed ==>
-      </div>
-      <div class="col-6">
-        <!== Second Card ==>
-        <div class="card artist-card mb-4">
-          <div class="card-body">
-
-          </div>
-        </div>
-        <!== Add more cards here as needed ==>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-6">
-        <!== First Card ==>
-        <div class="card artist-card mb-4">
-          <div class="card-body">
-
-          </div>
-        </div>
-        <!== Add more cards here as needed ==>
-      </div>
-      <div class="col-6">
-        <!== Second Card ==>
-        <div class="card artist-card mb-4">
-          <div class="card-body">
-
-          </div>
-        </div>
-        <!== Add more cards here as needed ==>
-      </div>
-    </div>  
-    <div class="ml-auto">
-      <i class="fa-solid fa-ellipsis icon-light"></i>
-    </div>
-  </div>
-  <div class="card-body bg-dark text-white rounded-top rounded-bottom mt-1 mx-1 px-2" style="min-height: 500px">
-    <h3 class="spotify-label mx-2 mt-2">saved posters</h3>
-    <div class="card-body">
-
-      </div>
-    </div>
-  </div> -->
 
 </div>
 

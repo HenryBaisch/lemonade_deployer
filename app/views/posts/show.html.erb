@@ -54,5 +54,12 @@
        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlKDCkW85ISXnekevdGNmjkf6dcG6nCZ0&callback=initMap"></script>
     </div>
   </div>
-
+  <% if current_user.bookmarked_posts.include? @post %>
+    <%= button_to 'Unbookmark', bookmark_path(id: current_user.bookmarks.where(post_id: @post.id).first.id), method: :delete %>
+  <% else %>
+    <%= form_with model: Bookmark.new do |form| %>
+      <%= form.hidden_field :post_id, value: @post.id %>
+      <%= form.submit 'Bookmark' %>
+    <% end %>
+  <% end %>
 </div>
