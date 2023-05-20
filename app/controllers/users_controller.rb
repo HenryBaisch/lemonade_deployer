@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def home
     @user = current_user
+    @bookmarked_posts = @user.bookmarked_posts
   end
 
   def my_posts
@@ -11,4 +12,5 @@ class UsersController < ApplicationController
   
   def account
   end
+
 end

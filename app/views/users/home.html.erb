@@ -102,6 +102,12 @@
       </div>
     </div>
   </div> -->
+  <% @bookmarked_posts.each do |post| %>
+    <div class="post">
+      <%= render post %>
+      <%= button_to 'Unbookmark', bookmark_path(id: post.bookmarks.where(user_id: current_user.id).first.id), method: :delete %>
+    </div>
+  <% end %>
 
 </div>
 

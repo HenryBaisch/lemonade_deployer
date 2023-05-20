@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
   belongs_to :user
+  has_many :bookmarks
+  has_many :bookmarked_by_users, through: :bookmarks, source: :user
 end
