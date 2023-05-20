@@ -1,0 +1,9 @@
+<div class="container account-container">
+  <div class="title mb-4">
+    <h1>Account info</h1>
+  </div>
+  <p>Email: <%= current_user.email %></p>
+  <p>Active flyers: <%= current_user.posts.count %></p>
+
+  <%= button_to 'sign out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light border-0"%>
+</div>

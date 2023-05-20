@@ -9,5 +9,6 @@ class UsersController < ApplicationController
     @my_posts = current_user.posts
   end
   
-
+  def account
+  end
 end

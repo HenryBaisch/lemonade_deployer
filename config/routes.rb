@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'profile', to: 'users#home'
   get 'discover', to: 'pages#discover'
+  get 'account', to: 'users#account'
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root 'pages#discover'
