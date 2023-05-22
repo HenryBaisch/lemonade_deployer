@@ -7,6 +7,7 @@ gem 'activestorage'
 gem "font-awesome-sass", "~> 6.4.0"
 gem 'geocoder'
 gem 'devise'
+gem "google-cloud-storage", "~> 1.11", require: false
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
