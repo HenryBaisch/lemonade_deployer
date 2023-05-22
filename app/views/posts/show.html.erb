@@ -1,70 +1,78 @@
-<p style="color: green"><%= notice %></p>
 
 
 
 
 
 
-  <%= link_to request.referer || root_path  do %>
-    <i class="fa-solid fa-circle-arrow-left fa-xl back-btn" style="opacity: 0.75;"></i>
-  <% end %>
+
+
  
 
   
 
 
-
-<div class="card border-0 mx-1 pb-4">
-  <div class="card-body pt-4 bg-dark text-white rounded-top rounded-bottom">
-
-    <% if current_user == @post.user %>
-     <div class="dropdown position-absolute top-0 end-0 right-0 mx-2">
-        <i class="fas fa-ellipsis-h fa-xl" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><%= link_to 'Edit', edit_post_path(@post), class: 'dropdown-item' %></li>
-          <li><%= button_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </div>
+<div class="container-fluid show-bg">
+  <div class="container pt-2 pb-2">
+    <%= link_to request.referer || root_path  do %>
+      <i class="fa-solid fa-circle-arrow-left fa-xl back-btn" style="opacity: 0.75;"></i>
     <% end %>
-
-    <div class="container px-0">
-      <%= image_tag @post.image, class: "card-img-top rounded-top rounded-bottom d-block", alt: "image description" %>
-
-    </div>
-    
-    <h3 class="title mb-1 mt-4"><%= @post.title %></h3>
-
-    <p class="card-text mb-0"><%= @post.description %></p>
-
-
-
-
-    <div class="card rounded-top rounded-bottom mt-4 mb-5" id="map" style="height: 200px">
-      <script>
-        function initMap() {
-          const postLocation = { lat: <%= @post.latitude %>, lng: <%= @post.longitude %> };
-          const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 12,
-            center: postLocation
-          });
-          const marker = new google.maps.Marker({
-            position: postLocation,
-            map: map,
-            title: "<%= @post.title %>"
-          });
-          
-        }
-      </script>
-       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlKDCkW85ISXnekevdGNmjkf6dcG6nCZ0&callback=initMap"></script>
-    </div>
   </div>
-  <% if current_user.bookmarked_posts.include? @post %>
-    <%= button_to 'Unbookmark', bookmark_path(id: current_user.bookmarks.where(post_id: @post.id).first.id), method: :delete %>
-  <% else %>
-    <%= form_with model: Bookmark.new do |form| %>
-      <%= form.hidden_field :post_id, value: @post.id %>
-      <%= form.submit 'Bookmark' %>
+  <div class="title mx-3 mb-2 mt-4">
+    <h1 class="show-title "><%= @post.title %></h1>
+    <h3 class="show-date "><%= @post.date.strftime("%B %d") %></h3>
+  </div>
+  <div class="card border-0 mx-1 pb-4">
+    <div class="card-body pt-2 bg-dark text-white rounded-top rounded-bottom">
+
+      <% if current_user == @post.user %>
+      <div class="dropdown position-absolute top-0 end-0 right-0 mx-2">
+          <i class="fas fa-ellipsis-h fa-xl" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><%= link_to 'Edit', edit_post_path(@post), class: 'dropdown-item' %></li>
+            <li><%= button_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item' %></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="container px-0">
+        <%= image_tag @post.image, class: "card-img-top rounded-top rounded-bottom d-block", alt: "image description" %>
+
+      </div>
+      
+      <h3 class="title mb-1 mt-4"><%= @post.title %></h3>
+
+      <p class="card-text mb-0"><%= @post.description %></p>
+
+
+
+
+      <div class="card rounded-top rounded-bottom mt-4 mb-5" id="map" style="height: 200px">
+        <script>
+          function initMap() {
+            const postLocation = { lat: <%= @post.latitude %>, lng: <%= @post.longitude %> };
+            const map = new google.maps.Map(document.getElementById("map"), {
+              zoom: 12,
+              center: postLocation
+            });
+            const marker = new google.maps.Marker({
+              position: postLocation,
+              map: map,
+              title: "<%= @post.title %>"
+            });
+            
+          }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlKDCkW85ISXnekevdGNmjkf6dcG6nCZ0&callback=initMap"></script>
+      </div>
+    </div>
+    <% if current_user.bookmarked_posts.include? @post %>
+      <%= button_to 'Unbookmark', bookmark_path(id: current_user.bookmarks.where(post_id: @post.id).first.id), method: :delete %>
+    <% else %>
+      <%= form_with model: Bookmark.new do |form| %>
+        <%= form.hidden_field :post_id, value: @post.id %>
+        <%= form.submit 'Bookmark' %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
