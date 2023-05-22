@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = current_user.posts.new(post_params)
+    @post.bg_color_id = rand(1..8)
     @post.image.attach(params[:post][:image]) # attach the uploaded image to the post
     respond_to do |format|
       if @post.save
