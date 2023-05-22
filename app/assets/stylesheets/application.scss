@@ -270,7 +270,7 @@ color: #b3b3b3	;
 
 
 .show-bg {
-  background: linear-gradient(to bottom, #325ea5, #121212); 
+  background: linear-gradient(to bottom, #264e3b, black); 
   padding: 0%;
   height: 100%;
 }
@@ -301,4 +301,33 @@ color: #b3b3b3	;
   src: url(font-path('CircularStd-Bold.otf')) format('opentype');
   font-weight: normal;
   font-style: normal;
+}
+
+
+/* post backgrounds */
+
+
+.bg-g-1 {
+  background: linear-gradient(to bottom, #005F73, black); 
+}
+.bg-g-2 {
+  background: linear-gradient(to bottom, #0A9396, black); 
+}
+.bg-g-3 {
+  background: linear-gradient(to bottom, #94D2BD, black); 
+}
+.bg-g-4 {
+  background: linear-gradient(to bottom,#E9D8A6, black); 
+}
+.bg-g-5 {
+  background: linear-gradient(to bottom, #EE9B00, black); 
+}
+.bg-g-6 {
+  background: linear-gradient(to bottom, #CA6702, black); 
+}
+.bg-g-7 {
+  background: linear-gradient(to bottom, #BB3E03, black); 
+}
+.bg-g-8 {
+  background: linear-gradient(to bottom, #9B2226, black); 
 }
