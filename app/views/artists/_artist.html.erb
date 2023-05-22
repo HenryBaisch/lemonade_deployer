@@ -1,19 +1,23 @@
 
 
 
-
+<%= link_to artist_path(artist) do %>
 <div class="container">
   <div class="card mb-3 artist-card">
     <div class="row g-0">
+    
       <div class="col-4">
         <%= image_tag("image.jpeg", class: "card-img", alt: "Artist Image") %>
       </div>
+    
       <div class="col-8">
         <div class="card-body">
           <h5 class="artist-card-title"><%= artist.name %></h5>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
       </div>
+      
     </div>
   </div>
 </div>
+<% end %>

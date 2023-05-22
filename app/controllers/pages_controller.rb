@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
 
   def discover
-    @posts = Post.all
+    @posts = Post.order(:date)
     @artists = Artist.all
   end
 
