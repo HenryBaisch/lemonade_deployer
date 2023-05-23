@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :posts
   has_many :bookmarks
   has_many :bookmarked_posts, through: :bookmarks, source: :post
+  has_one :artist, dependent: :destroy
 end
