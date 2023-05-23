@@ -13,7 +13,13 @@
 
   </div>
   <h2 class="spotify-label mt-4 mb-0 mx-2 mt-2">Local Artists</h2>
-
+    <div id="posts" class="horizontal-scroll-container mt-2" >
+      <% @bands.each do |band| %>
+        
+       <%= render band %>
+     
+      <% end %>
+    </div>
   <!-- artists -->
 
   <div class="horizontal-scroll-container d-flex flex-nowrap overflow-auto mt-2">

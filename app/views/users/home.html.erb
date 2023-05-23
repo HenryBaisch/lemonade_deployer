@@ -15,7 +15,14 @@
   <% end %>
   <!-- saved flyers -->
 
+  <% if @band %>
+    <h2>Band Information</h2>
+    <h1 class="post-title"><%= @band.name%></h1>
+    <p><strong>Band Biography:</strong> <%= @band.bio %></p>
 
+  <% else %>
+    <p>This user is not associated with a band.</p>
+  <% end %>
 
 
 

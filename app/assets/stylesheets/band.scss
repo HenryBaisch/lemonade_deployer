@@ -1,0 +1,57 @@
+.band-title {
+  font-size: 48px;
+  color: white;
+  font-family: 'CircularStd-Bold', sans-serif;
+  font-weight: bold;
+  word-wrap: break-word ;
+  overflow-wrap: break-word ;
+  hyphens: auto;
+  letter-spacing: 0px;
+}
+.band-card {
+  border: 0;
+  background-color: #212121;
+  border-radius: 10px; /* Rounded corners */
+  display: inline-block;
+  color: #fff; /* White text */
+  display: flex;
+  justify-content: left;
+  width: 350px;
+  height: 80px;
+}
+.band-container {
+  height: 40px;
+}
+.band-card-title {
+  
+  vertical-align: middle;
+  text-align: center;
+}
+.band-profile-picture {
+  max-height: 100%;
+  margin-right: 20px; /* Add some space between the picture and the text */
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.image-container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+
+.text-container {
+  padding: 5px;
+  margin-left: 10%;
+  display: grid;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
+
