@@ -1,0 +1,28 @@
+<%= form_with(model: band) do |form| %>
+  <% if band.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(band.errors.count, "error") %> prohibited this band from being saved:</h2>
+
+      <ul>
+        <% band.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :profile_picture %>
+    <%= form.file_field :profile_picture %>
+  </div>
+  <div class="form-group">
+    <%= form.label :Band_name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Band Name" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :Bio %>
+    <%= form.text_field :bio, class: "form-control", placeholder: "Bio" %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -58,8 +58,12 @@ color: #b3b3b3	;
   font-weight: normal;
   font-style: normal;
 }
-
-
+@font-face {
+  font-family: 'CircularStd-Bold.otf';
+  src: url(font-path('CircularStd-Bold.otf')) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*=====  End of fonts  ======*/
 
@@ -70,24 +74,6 @@ color: #b3b3b3	;
 
 
 
-/* ----------artist styling ------------*/
-
-
-.artist-card {
-  border: 0;
-  background-color: #212121;
-  border-radius: 10px; /* Rounded corners */
-  display: inline-block;
-  width: 300px;
-  color: #fff; /* White text */
-}
-
-.artist-card-title {
-  
-  vertical-align: middle;
-  text-align: center;
-}
-/* ----------------------------- */
 
 
 
@@ -126,7 +112,6 @@ color: #b3b3b3	;
   overflow-wrap: break-word ;
   hyphens: auto;
 }
-
 
 .post-card {
   padding-right: 5%;
@@ -251,4 +236,80 @@ color: #b3b3b3	;
   display: inline-block;
   background: transparent;
   border: none; /* remove default border */
+}
+
+
+/* icons */
+
+.back-btn {
+ color: #171815;
+}
+
+
+
+/* show-post */
+
+
+
+.show-bg {
+  background: linear-gradient(to bottom, #264e3b, black); 
+  padding: 0%;
+  height: 100%;
+}
+.show-date {
+  font-size: 18px;
+  color: white;
+  font-family: 'CircularStd-Bold', sans-serif;
+  font-weight: bold;
+  word-wrap: break-word ;
+  overflow-wrap: break-word ;
+  hyphens: auto;
+  letter-spacing: 0px;
+  margin-left: 10px;
+}
+.show-title {
+  font-size: 48px;
+  color: white;
+  font-family: 'CircularStd-Bold', sans-serif;
+  font-weight: bold;
+  word-wrap: break-word ;
+  overflow-wrap: break-word ;
+  hyphens: auto;
+  letter-spacing: 0px;
+}
+
+@font-face {
+  font-family: 'CircularStd-Bold';
+  src: url(font-path('CircularStd-Bold.otf')) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* post backgrounds */
+
+
+.bg-g-1 {
+  background: linear-gradient(to bottom, #005F73, black); 
+}
+.bg-g-2 {
+  background: linear-gradient(to bottom, #0A9396, black); 
+}
+.bg-g-3 {
+  background: linear-gradient(to bottom, #94D2BD, black); 
+}
+.bg-g-4 {
+  background: linear-gradient(to bottom,#E9D8A6, black); 
+}
+.bg-g-5 {
+  background: linear-gradient(to bottom, #EE9B00, black); 
+}
+.bg-g-6 {
+  background: linear-gradient(to bottom, #CA6702, black); 
+}
+.bg-g-7 {
+  background: linear-gradient(to bottom, #BB3E03, black); 
+}
+.bg-g-8 {
+  background: linear-gradient(to bottom, #9B2226, black); 
 }

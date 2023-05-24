@@ -22,6 +22,7 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = current_user.posts.new(post_params)
+    @post.bg_color_id = rand(1..8)
     @post.image.attach(params[:post][:image]) # attach the uploaded image to the post
     respond_to do |format|
       if @post.save
@@ -49,13 +50,13 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @post = Post.find(params[:id])
     @post.destroy
-
-    respond_to do |format|
-      format.html { redirect_to posts_url, notice: "Post was successfully destroyed." }
-      format.json { head :no_content }
-    end
+  
+    redirect_to posts_path
   end
+  
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
