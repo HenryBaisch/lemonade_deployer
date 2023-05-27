@@ -10,7 +10,17 @@ class UsersController < ApplicationController
   def my_posts
     @my_posts = current_user.posts
   end
-  
+  def bookmark
+    @post = Post.find(params[:id])
+    if bookmarked?(@post)
+      bookmark = bookmarks.where(post: @post).first
+      bookmark.destroy
+      redirect_to post_url(@post), notice: 'Bookmark was successfully removed.'
+    else
+      bookmark = bookmarks.create(post: @post)
+      redirect_to post_url(@post), notice: 'Bookmark was successfully added.'
+    end
+  end
   def account
   end
 

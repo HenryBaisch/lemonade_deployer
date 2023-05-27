@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :bookmarks
+      post 'bookmark' 
+      delete 'bookmark'
     end
   end
   get 'profile', to: 'users#home'
