@@ -9,20 +9,21 @@
     <span class="badge transparent position-absolute bottom-0 end-0 m-2"><%= post.date.strftime("%B %d") %></span>
 
 
-    <div class="d-flex justify-content-left px-0 position-absolute bottom-0 left-0" id="bookmark-icon">
-    <% if current_user.bookmarked_posts.include? post %>
-      <%= button_to bookmark_path(id: current_user.bookmarks.where(post_id: post.id).first.id), method: :delete, remote: true, class: "btn btn-icon" do %>
-        <i class="fa-solid fa-bookmark"></i>
-      <% end %>
-    <% else %>
-      <%= form_with model: Bookmark.new, remote: true do |form| %>
-        <%= form.hidden_field :post_id, value: post.id %>
-        <%= form.button class: "btn btn-icon" do %>
-          <i class="fa-regular fa-bookmark"></i>
+    <div class="d-flex justify-content-left px-0 position-absolute bottom-0 left-0">
+      <% if current_user.bookmarked_posts.include? post %>
+        <%= button_to bookmark_path(id: current_user.bookmarks.where(post_id: post.id).first.id), method: :delete, class: "btn btn-icon" do %>
+          <i class="fa-solid fa-bookmark"></i>
+        <% end %>
+      <% else %>
+        <%= form_with model: Bookmark.new do |form| %>
+          <%= form.hidden_field :post_id, value: post.id %>
+          <%= form.button class: "btn btn-icon" do %>
+            <i class="fa-regular fa-bookmark"></i>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+
 
   </div>
 </div>
