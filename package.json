@@ -1,0 +1,12 @@
+{
+  "name": "lemonade",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/HenryBaisch/lemonade_deployer.git",
+  "author": "Henry Baisch <henrybaisch02@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cropperjs": "^2.0.0-beta.2",
+    "jquery": "^3.7.0"
+  }
+}
