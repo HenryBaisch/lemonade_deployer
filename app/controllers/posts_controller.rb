@@ -18,7 +18,9 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
   end
-
+  def bookmarked?(post)
+    bookmarks.where(post: post).first
+  end
   # POST /posts or /posts.json
   def create
     @post = current_user.posts.new(post_params)
