@@ -8,12 +8,18 @@ class BookmarksController < ApplicationController
     else
       # failure feedback
     end
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
     # feedback
+    respond_to do |format|
+      format.js
+    end
   end
 
   private
